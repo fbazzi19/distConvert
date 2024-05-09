@@ -1,0 +1,38 @@
+---
+title: "Converting distances measures with distConvert"
+author: "Fateema Bazzi"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Converting distances measures with distConvert}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo = FALSE, results = 'asis'}
+  library(BiocStyle)
+```
+```{r, echo = FALSE}
+  library(knitr)
+```
+```{r, echo=FALSE}
+  library(distConvert)
+```
+ 
+# Introduction
+Units for measuring distance differ significantly between the European and the US metric systems. The `r Rpackage("distConvert")` package provides functions to convert kilometres to miles and *vice versa*.
+# Conversions
+## Converting kilometres to miles
+Converting **kilometres to miles** is easy as shown in this example:
+```{r}
+  km_to_miles(1)
+```
+## Converting miles to kilometres
+Converting **miles to kilometres** is just as easy:
+```{r}
+  miles_to_km(1)
+```
+A second function provides the same results, but relies on the CRAN package `r CRANpkg("measurements")`:
+```{r}
+  miles_to_km2(1)
+```
